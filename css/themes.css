@@ -1,0 +1,20 @@
+:root {
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #0f172a;
+  --muted: #64748b;
+  --primary: #2563eb;
+  --success: #16a34a;
+  --danger: #dc2626;
+  --border: #e5e7eb;
+}
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --surface: #020617;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --primary: #60a5fa;
+  --success: #22c55e;
+  --danger: #ef4444;
+  --border: #1e293b;
+}

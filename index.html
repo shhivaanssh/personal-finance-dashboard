@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Personal Finance Dashboard</title>
+
+  <!-- Base Styles -->
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/themes.css" />
+
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- App Root -->
+  <div id="app">
+
+    <!-- Header -->
+    <header class="app-header">
+      <h1>Finance Dashboard</h1>
+
+      <div class="header-actions">
+        <button id="themeToggle">🌙</button>
+        <button id="logoutBtn">Logout</button>
+      </div>
+    </header>
+
+    <!-- Summary Cards -->
+    <section class="summary-cards">
+      <div class="card" id="totalIncome">
+        <h3>Total Income</h3>
+        <p>₹0</p>
+      </div>
+
+      <div class="card" id="totalExpense">
+        <h3>Total Expense</h3>
+        <p>₹0</p>
+      </div>
+
+      <div class="card" id="balance">
+        <h3>Balance</h3>
+        <p>₹0</p>
+      </div>
+    </section>
+
+    <!-- Transaction Form -->
+    <section class="transaction-form">
+      <h2>Add Transaction</h2>
+
+      <form id="transactionForm">
+        <input type="number" id="amount" placeholder="Amount" required />
+
+        <select id="type">
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
+
+        <input type="text" id="category" placeholder="Category" required />
+        <input type="date" id="date" />
+
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <!-- Transactions Table -->
+    <section class="transactions">
+      <h2>Transactions</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Category</th>
+            <th>Type</th>
+            <th>Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody id="transactionTableBody">
+          <!-- JS will inject rows here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+  <div class="chart-box">
+    <canvas id="incomeExpenseChart"></canvas>
+  </div>
+
+  <div class="chart-box">
+    <canvas id="categoryChart"></canvas>
+  </div>
+</section>
+
+
+  </div>
+
+  <!-- JavaScript -->
+  <script src="js/auth.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/transactions.js"></script>
+  <script src="js/budgets.js"></script> 
+  <script src="js/charts.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

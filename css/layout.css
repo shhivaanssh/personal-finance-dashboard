@@ -1,0 +1,58 @@
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+}
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  font-size: 13px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+td {
+  padding: 10px 12px;
+}
+
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+[data-theme="dark"] tr:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+tbody tr td[colspan] {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+}
+.card,
+button,
+tr {
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
