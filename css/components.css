@@ -1,13 +1,164 @@
+/* ================================
+   GLOBAL TRANSITIONS
+================================ */
+.card,
+.transaction-form,
+.transactions,
+.chart-box,
+.app-header,
+button,
+tr {
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+/* ================================
+   HEADER
+================================ */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+/* ================================
+   SUMMARY CARDS
+================================ */
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.card h3 {
+  font-size: 13px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.card p {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* Semantic finance colors */
+#totalIncome p {
+  color: var(--success);
+}
+
+#totalExpense p {
+  color: var(--danger);
+}
+
+/* ================================
+   TRANSACTION FORM
+================================ */
+.transaction-form {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.transaction-form form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.transaction-form input,
+.transaction-form select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  color: var(--text);
+}
+
+/* ================================
+   TABLE (ACCOUNTING STYLE)
+================================ */
+.transactions {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
-th, td {
-  padding: 8px 12px;
+th {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+  padding: 10px;
+  border-bottom: 1px solid var(--border);
   text-align: left;
+}
+
+td {
+  padding: 14px 10px;
+  font-size: 14px;
   white-space: nowrap;
 }
+
+tr:hover {
+  background-color: var(--surface-alt);
+}
+
+tbody tr td[colspan] {
+  text-align: center;
+  color: var(--muted);
+  padding: 24px;
+}
+
+/* ================================
+   BUTTONS (FINANCE STYLE)
+================================ */
+button {
+  background-color: var(--primary);
+  color: black;
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Destructive action */
+.delete-btn {
+  background-color: transparent;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+/* ================================
+   CHARTS
+================================ */
 .charts {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -16,7 +167,11 @@ th, td {
 }
 
 .chart-box {
-  height: 300px;          /* 🔴 CRITICAL */
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  height: 300px;          /* 🔴 REQUIRED FOR CHART.JS */
   position: relative;
 }
 
@@ -24,18 +179,65 @@ th, td {
   width: 100% !important;
   height: 100% !important;
 }
-.card,
-.transaction-form,
-.transactions,
-.chart-box,
-.app-header {
+
+/* ================================
+   LOGIN PAGE
+================================ */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 360px;
+  padding: 32px;
   background-color: var(--surface);
   border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.4s ease;
 }
-button {
-  background-color: var(--primary);
-  color: white;
+
+.login-card h1 {
+  margin-bottom: 8px;
+  font-size: 22px;
 }
-.delete-btn {
-  background-color: var(--danger);
+
+.login-card .subtitle {
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: transparent;
+  color: var(--text);
+}
+
+.login-card button {
+  width: 100%;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
