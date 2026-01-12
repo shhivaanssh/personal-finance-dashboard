@@ -194,50 +194,70 @@ button:hover {
 .login-card {
   width: 100%;
   max-width: 360px;
-  padding: 32px;
+  padding: 36px; /* ⬅️ slightly more breathing room */
   background-color: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
+
+  /* premium, soft depth */
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.04);
+
   text-align: center;
   animation: fadeIn 0.4s ease;
 }
 
 .login-card h1 {
-  margin-bottom: 8px;
   font-size: 22px;
+  margin-bottom: 8px;
 }
 
 .login-card .subtitle {
-  margin-bottom: 24px;
   font-size: 14px;
   color: var(--muted);
+  margin-bottom: 32px; /* ⬅️ calmer spacing */
 }
 
 .login-card input {
   width: 100%;
-  padding: 10px 12px;
-  margin-bottom: 16px;
-  border-radius: 6px;
+  padding: 12px;
+  border-radius: 8px;
   border: 1px solid var(--border);
-  background-color: transparent;
+  background-color: var(--surface-alt); /* ⬅️ softer input */
   color: var(--text);
+  margin-bottom: 20px;
+}
+
+.login-card input:focus {
+  background-color: var(--surface);
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
 }
 
 .login-card button {
   width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: var(--primary);
+  color: black; /* ✅ FIXED */
+  font-weight: 600;
+  cursor: pointer;
 }
 
-/* ================================
-   ANIMATIONS
-================================ */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.login-card button:hover {
+  opacity: 0.95;
 }
+
+.login-card button:active {
+  transform: scale(0.98);
+}
+
+.login-footnote {
+  margin-top: 22px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+
+
