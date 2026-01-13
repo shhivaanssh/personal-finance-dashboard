@@ -1,3 +1,13 @@
+// ================================
+// APPLY THEME ON PAGE LOAD
+// ================================
+// ================================
+// APPLY THEME ON LOGIN PAGE
+// ================================
+const savedTheme = localStorage.getItem("theme") || "light";
+document.documentElement.setAttribute("data-theme", savedTheme);
+
+
 const AUTH_KEY = "finance_user";
 
 function loginUser(username) {
